@@ -45,6 +45,16 @@ To set up this project locally, follow these steps:
    npm install
    ```
 
+## Environment Setup
+
+To configure your local environment:
+
+1. Copy the `.env.example` file to a new file named `.env.development`.
+   ```bash
+   cp .env.example .env.development
+   ```
+2. Open the `.env.development` file and replace the placeholder access key value with your unsplash acess key.
+
 ## Running the Application
 
 To run the application on your local machine:
