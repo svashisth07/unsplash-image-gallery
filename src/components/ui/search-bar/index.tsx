@@ -1,4 +1,4 @@
-import { DEBOUNCE_DELAY } from "@/constants/inex";
+import { DEBOUNCE_DELAY } from "@/constants";
 import { useDebounce } from "@/hooks/useDebounce";
 import { FC, useState } from "react";
 

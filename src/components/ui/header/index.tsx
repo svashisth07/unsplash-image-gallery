@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { SearchBar } from "../search-bar";
 import { useWindowScroll } from "@/hooks/useWindowScroll";
+import { Z_INDEX } from "@/constants";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -14,7 +15,7 @@ export const Header: FC<HeaderProps> = ({ onSearch }) => {
 
   return (
     <header
-      className="z-50 sticky top-0 flex items-center p-4 transition-background duration-300"
+      className={`z-[${Z_INDEX.HEADER}] sticky top-0 flex items-center p-4 transition-background duration-300`}
       style={{ backgroundColor: `rgba(255, 255, 255, ${opacity})` }}
     >
       <h1 className="text-2xl font-bold min-w-1/2">
