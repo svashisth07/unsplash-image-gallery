@@ -12,10 +12,11 @@ export const Header: FC<HeaderProps> = ({ onSearch }) => {
 
   const maxScroll = 100;
   const opacity = Math.max(1 - scrollY / maxScroll, 0.9);
+  const zIndexClass = `z-[${Z_INDEX.HEADER}]`;
 
   return (
     <header
-      className={`z-[${Z_INDEX.HEADER}] sticky top-0 flex items-center p-4 transition-background duration-300`}
+      className={`sticky top-0 flex items-center p-4 transition-background duration-300 ${zIndexClass}`}
       style={{ backgroundColor: `rgba(255, 255, 255, ${opacity})` }}
     >
       <h1 className="text-2xl font-bold min-w-1/2">

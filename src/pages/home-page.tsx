@@ -5,6 +5,7 @@ import { Header } from "@/components/ui/header";
 import { NoResult } from "@/components/ui/no-result";
 import { Loader } from "@/components/ui/loader";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
+import { Z_INDEX } from "@/constants";
 
 const HomePage: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -17,7 +18,7 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <Header onSearch={setQuery} />
-      <div className="max-w-screen-xl mx-auto">
+      <div className={`max-w-screen-xl mx-auto relative z-[${Z_INDEX.CONTENT}]`}>
         {isLoading && <Loader />}
         {allPages.length > 0 && <ImageGallery images={allPages} />}
         {!isLoading && allPages.length === 0 && (

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { UnsplashImage } from "@/types/image-gallery";
 import { ImageCard } from "../image-card";
-import { ImageModal } from "../image-modal";
+import { Modal } from "../modal";
 
 interface ImageGalleryProps {
   images: UnsplashImage[];
@@ -29,12 +29,14 @@ export const ImageGallery: FC<ImageGalleryProps> = ({ images }) => {
           onClick={() => handleImageClick(image)}
         />
       ))}
-      {selectedImage && (
-        <ImageModal
-          image={selectedImage}
-          onClose={handleCloseModal}
+
+      <Modal onClose={handleCloseModal} isOpen={!!selectedImage}>
+        <img
+          src={selectedImage?.urls.regular}
+          alt={selectedImage?.alt_description}
+          className="w-full h-full object-cover"
         />
-      )}
+      </Modal>
     </div>
   );
 };
